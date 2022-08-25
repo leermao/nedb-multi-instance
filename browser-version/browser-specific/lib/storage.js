@@ -8,10 +8,13 @@
 
 var localforage = require('localforage')
 
-let store = localforage.createInstance({
+// Configure localforage to display NeDB name for now. Would be a good idea to let user use his own app name
+localforage.config({
   name: 'NeDB',
   storeName: 'nedbdata',
 })
+
+let store = localforage
 
 function createInstance({name, storeName}) {
   store = localforage.createInstance({
